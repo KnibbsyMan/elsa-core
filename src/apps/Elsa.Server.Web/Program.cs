@@ -439,8 +439,8 @@ services
             {
                 options.Clients = client =>
                 {
-                    client.Register<MySqlClient>("MySql");
-                    client.Register<PostgreSqlClient>("PostgreSql");
+                    //client.Register<MySqlClient>("MySql");
+                    //client.Register<PostgreSqlClient>("PostgreSql");
                     client.Register<SqliteClient>("Sqlite");
                     client.Register<SqlServerClient>("Sql Server");
                 };
