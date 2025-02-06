@@ -34,7 +34,10 @@ public class SqlFeature : FeatureBase
     /// </summary>
     public override void Configure()
     {
-        Module.AddActivitiesFrom<SqlFeature>();
+        Module
+            .AddActivitiesFrom<SqlFeature>()
+            .AddFastEndpointsAssembly(GetType());
+        //.AddVariableTypeAndAlias<WebhookEvent>("WebhookEvent", "Webhooks")
     }
 
     /// <summary>
