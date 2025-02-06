@@ -1,4 +1,4 @@
-﻿using System.Data;
+using System.Data;
 
 namespace Elsa.Sql.Client;
 
@@ -13,6 +13,10 @@ public abstract class BaseSqlClient
     {
         var dataSet  = new DataSet(datasetName);
         dataSet.Tables.Add(ReadAsDataTable(reader)); 
+        var schematable = reader.GetSchemaTable();
+        var data = new DataSet();
+        dataSet.Tables.Add(ReadAsDataTable(reader));
+        
         return dataSet;
     }
 
